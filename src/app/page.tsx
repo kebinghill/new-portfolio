@@ -1,10 +1,12 @@
 import Image from 'next/image';
-import Header from './header';
+import Header from './components/Header';
 
-export default function Home() {
+const Home = () => {
   return (
     <div>
       <Header />
     </div>
   );
-}
+};
+
+export default Home;
