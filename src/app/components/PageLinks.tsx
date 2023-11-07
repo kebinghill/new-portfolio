@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const PageLinks = () => {
   return (
-    <div className='pr-[5px]'>
+    <div>
       <Link href='/bio'>Bio</Link>
     </div>
   );
