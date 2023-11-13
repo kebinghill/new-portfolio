@@ -11,9 +11,13 @@ const Resume = () => {
 
   console.log(isContactShown);
 
+  const handleMouseEnter = (e) => {
+    e.target.zIndex = '10';
+  };
+
   return (
     <>
-      <div className='bg-contain bg-center bg-no-repeat bg-[url("/resume.png")] rounded min-w-[370px] min-h-[500px] max-h-[1000px] flex flex-col border pointer-events-none'>
+      <div className='bg-contain bg-center bg-no-repeat bg-[url("/resume.png")] rounded min-w-[370px] min-h-[500px] max-h-[1000px] flex flex-col border'>
         <button
           onMouseEnter={() => setIsContactShown(true)}
           onMouseLeave={() => setIsContactShown(false)}
@@ -23,21 +27,57 @@ const Resume = () => {
               CONTACT
             </div>
           ) : (
-            <div className='h-[65px] border'></div>
+            <div className='h-[65px]'></div>
           )}
         </button>
-        <div className='flex flex-col justify-center items-center text-black text-xl h-[45px]  bg-slate-400'>
-          SUMMARY
-        </div>
-        <div className='flex flex-col justify-center items-center text-black text-xl h-[65px]  bg-slate-400'>
-          SKILLS
-        </div>
-        <div className='flex flex-col justify-center items-center text-black text-xl h-[250px]  bg-slate-400'>
-          WORK EXPERIENCE
-        </div>
-        <div className='flex flex-col justify-center items-center text-black text-xl h-[90px]  bg-slate-400'>
-          EDUCATION
-        </div>
+        <button
+          onMouseEnter={() => setIsSummaryShown(true)}
+          onMouseLeave={() => setIsSummaryShown(false)}
+        >
+          {isSummaryShown ? (
+            <div className='flex flex-col justify-center items-center text-black text-xl h-[45px]  bg-slate-400'>
+              SUMMARY
+            </div>
+          ) : (
+            <div className='h-[45px]'></div>
+          )}
+        </button>
+        <button
+          onMouseEnter={() => setIsSkillsShown(true)}
+          onMouseLeave={() => setIsSkillsShown(false)}
+        >
+          {isSkillsShown ? (
+            <div className='flex flex-col justify-center items-center text-black text-xl h-[65px]  bg-slate-400'>
+              SKILLS
+            </div>
+          ) : (
+            <div className='h-[65px]'></div>
+          )}
+        </button>
+        <button
+          onMouseEnter={() => setIsExperienceShown(true)}
+          onMouseLeave={() => setIsExperienceShown(false)}
+        >
+          {isExperienceShown ? (
+            <div className='flex flex-col justify-center items-center text-black text-xl h-[250px]  bg-slate-400'>
+              WORK EXPERIENCE
+            </div>
+          ) : (
+            <div className='h-[250px]'></div>
+          )}
+        </button>
+        <button
+          onMouseEnter={() => setIsEducationShown(true)}
+          onMouseLeave={() => setIsEducationShown(false)}
+        >
+          {isEducationShown ? (
+            <div className='flex flex-col justify-center items-center text-black text-xl h-[90px]  bg-slate-400'>
+              EDUCATION
+            </div>
+          ) : (
+            <div className='h-[90px]'></div>
+          )}
+        </button>
       </div>
       <div>
         {isSummaryShown && (
