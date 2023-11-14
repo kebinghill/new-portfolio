@@ -9,12 +9,6 @@ const Resume = () => {
   const [isExperienceShown, setIsExperienceShown] = useState(false);
   const [isEducationShown, setIsEducationShown] = useState(false);
 
-  console.log(isContactShown);
-
-  const handleMouseEnter = (e) => {
-    e.target.zIndex = '10';
-  };
-
   return (
     <>
       <div className='bg-contain bg-center bg-no-repeat bg-[url("/resume.png")] rounded min-w-[370px] min-h-[500px] max-h-[1000px] flex flex-col border'>
