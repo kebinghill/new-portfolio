@@ -11,68 +11,64 @@ const Resume = () => {
 
   return (
     <>
-      <div className='bg-contain bg-center bg-no-repeat bg-[url("/resume.png")] rounded min-w-[370px] min-h-[500px] max-h-[1000px] flex flex-col border'>
+      <div className='bg-cover bg-center bg-no-repeat bg-[url("/resume.png")] rounded min-w-[370px] max-w-[600px] aspect-[3/4] flex flex-col border-2 border-red-500'>
         <button
           onMouseEnter={() => setIsContactShown(true)}
           onMouseLeave={() => setIsContactShown(false)}
+          className='flex-[0.8]'
         >
-          {isContactShown ? (
-            <div className='flex justify-center items-center text-black text-xl h-[65px] bg-slate-400'>
+          {isContactShown && (
+            <div className='flex justify-center items-center text-black text-5xl bg-slate-300/90 h-[100%]'>
               CONTACT
             </div>
-          ) : (
-            <div className='h-[65px]'></div>
           )}
         </button>
         <button
           onMouseEnter={() => setIsSummaryShown(true)}
           onMouseLeave={() => setIsSummaryShown(false)}
+          className='flex-[0.5]'
         >
-          {isSummaryShown ? (
-            <div className='flex flex-col justify-center items-center text-black text-xl h-[45px]  bg-slate-400'>
+          {isSummaryShown && (
+            <div className='flex justify-center items-center text-black text-5xl bg-slate-300/90 h-[100%]'>
               SUMMARY
             </div>
-          ) : (
-            <div className='h-[45px]'></div>
           )}
         </button>
         <button
           onMouseEnter={() => setIsSkillsShown(true)}
           onMouseLeave={() => setIsSkillsShown(false)}
+          className='flex-[0.8]'
         >
-          {isSkillsShown ? (
-            <div className='flex flex-col justify-center items-center text-black text-xl h-[65px]  bg-slate-400'>
+          {isSkillsShown && (
+            <div className='flex justify-center items-center text-black text-5xl bg-slate-300/90 h-[100%]'>
               SKILLS
             </div>
-          ) : (
-            <div className='h-[65px]'></div>
           )}
         </button>
         <button
           onMouseEnter={() => setIsExperienceShown(true)}
           onMouseLeave={() => setIsExperienceShown(false)}
+          className='flex-[2.9]'
         >
-          {isExperienceShown ? (
-            <div className='flex flex-col justify-center items-center text-black text-xl h-[250px]  bg-slate-400'>
+          {isExperienceShown && (
+            <div className='flex justify-center items-center text-black text-5xl bg-slate-300/90 h-[100%]'>
               WORK EXPERIENCE
             </div>
-          ) : (
-            <div className='h-[250px]'></div>
           )}
         </button>
         <button
           onMouseEnter={() => setIsEducationShown(true)}
           onMouseLeave={() => setIsEducationShown(false)}
+          className='flex-1'
         >
-          {isEducationShown ? (
-            <div className='flex flex-col justify-center items-center text-black text-xl h-[90px]  bg-slate-400'>
+          {isEducationShown && (
+            <div className='flex justify-center items-center text-black text-5xl bg-slate-300/90 h-[100%]'>
               EDUCATION
             </div>
-          ) : (
-            <div className='h-[90px]'></div>
           )}
         </button>
       </div>
+
       <div>
         {isSummaryShown && (
           <div>
@@ -86,17 +82,23 @@ const Resume = () => {
             </p>
           </div>
         )}
-        <h2>SKILLS</h2>
-        <h4>LANGUAGES</h4>
-        <p>
-          Languages: Javascript, Typescript Frontend: HTML, CSS, React, Redux,
-          NextJS, Ant Design, Tailwind CSS, Material UI, Axios Backend: Node,
-          PostgreSQL, TypeORM, NestJS, Sequelize Other: Moment-tz, Lodash, Jest,
-          Design and development of APIs, Web Architecture, Git, HTTP, REST,
-          Database Storage, Design Fundamentals, NPM, AWS, Docker Soft: Complex
-          problem-solving, attention to detail, prioritization
-        </p>
-        <p></p>
+        {isSkillsShown && (
+          <div>
+            <h2>SKILLS</h2>
+
+            <h4>LANGUAGES</h4>
+            <p>
+              Languages: Javascript, Typescript Frontend: HTML, CSS, React,
+              Redux, NextJS, Ant Design, Tailwind CSS, Material UI, Axios
+              Backend: Node, PostgreSQL, TypeORM, NestJS, Sequelize Other:
+              Moment-tz, Lodash, Jest, Design and development of APIs, Web
+              Architecture, Git, HTTP, REST, Database Storage, Design
+              Fundamentals, NPM, AWS, Docker Soft: Complex problem-solving,
+              attention to detail, prioritization
+            </p>
+            <p></p>
+          </div>
+        )}
       </div>
     </>
   );
