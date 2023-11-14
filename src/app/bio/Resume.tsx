@@ -11,14 +11,14 @@ const Resume = () => {
 
   return (
     <>
-      <div className='bg-cover bg-center bg-no-repeat bg-[url("/resume.png")] rounded min-w-[370px] max-w-[600px] aspect-[3/4] flex flex-col border-2 border-red-500'>
+      <div className='bg-cover bg-center bg-no-repeat bg-[url("/resume.png")] rounded min-w-[370px] max-w-[600px] aspect-[3/4] flex flex-col'>
         <button
           onMouseEnter={() => setIsContactShown(true)}
           onMouseLeave={() => setIsContactShown(false)}
           className='flex-[0.8]'
         >
           {isContactShown && (
-            <div className='flex justify-center items-center text-black text-5xl bg-slate-300/90 h-[100%]'>
+            <div className='flex justify-center items-center text-5xl bg-stone-900/90 h-[100%]'>
               CONTACT
             </div>
           )}
@@ -29,7 +29,7 @@ const Resume = () => {
           className='flex-[0.5]'
         >
           {isSummaryShown && (
-            <div className='flex justify-center items-center text-black text-5xl bg-slate-300/90 h-[100%]'>
+            <div className='flex justify-center items-center text-5xl bg-stone-900/90 h-[100%]'>
               SUMMARY
             </div>
           )}
@@ -40,7 +40,7 @@ const Resume = () => {
           className='flex-[0.8]'
         >
           {isSkillsShown && (
-            <div className='flex justify-center items-center text-black text-5xl bg-slate-300/90 h-[100%]'>
+            <div className='flex justify-center items-center text-5xl bg-stone-900/90 h-[100%]'>
               SKILLS
             </div>
           )}
@@ -51,7 +51,7 @@ const Resume = () => {
           className='flex-[2.9]'
         >
           {isExperienceShown && (
-            <div className='flex justify-center items-center text-black text-5xl bg-slate-300/90 h-[100%]'>
+            <div className='flex justify-center items-center  text-5xl bg-stone-900/90 h-[100%]'>
               WORK EXPERIENCE
             </div>
           )}
@@ -62,13 +62,12 @@ const Resume = () => {
           className='flex-1'
         >
           {isEducationShown && (
-            <div className='flex justify-center items-center text-black text-5xl bg-slate-300/90 h-[100%]'>
+            <div className='flex justify-center items-center text-5xl bg-stone-900/90 h-[100%]'>
               EDUCATION
             </div>
           )}
         </button>
       </div>
-
       <div>
         {isSummaryShown && (
           <div>
