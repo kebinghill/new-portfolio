@@ -21,12 +21,16 @@ const Resume = () => {
     setShowSection(section);
   };
 
+  const handleOnMouseLeave = () => {
+    setShowHoverSection('');
+  };
+
   return (
     <>
       <div className='bg-cover bg-center bg-no-repeat bg-[url("/resume.png")] rounded sm:w-[100vw] max-w-[600px] aspect-[3/4] flex flex-col'>
         <button
           onMouseEnter={() => setShowHoverSection(resumeSections.CONTACT)}
-          onMouseLeave={() => setShowHoverSection('')}
+          onMouseLeave={() => handleOnMouseLeave()}
           onClick={() => handleOnClick(resumeSections.CONTACT)}
           className='flex-[0.8]'
         >
@@ -38,7 +42,7 @@ const Resume = () => {
         </button>
         <button
           onMouseEnter={() => setShowHoverSection(resumeSections.SUMMARY)}
-          onMouseLeave={() => setShowHoverSection('')}
+          onMouseLeave={() => handleOnMouseLeave()}
           onClick={() => handleOnClick(resumeSections.SUMMARY)}
           className='flex-[0.5]'
         >
@@ -50,7 +54,7 @@ const Resume = () => {
         </button>
         <button
           onMouseEnter={() => setShowHoverSection(resumeSections.SKILLS)}
-          onMouseLeave={() => setShowHoverSection('')}
+          onMouseLeave={() => handleOnMouseLeave()}
           onClick={() => handleOnClick(resumeSections.SKILLS)}
           className='flex-[0.8]'
         >
@@ -62,7 +66,7 @@ const Resume = () => {
         </button>
         <button
           onMouseEnter={() => setShowHoverSection(resumeSections.EXPERIENCE)}
-          onMouseLeave={() => setShowHoverSection('')}
+          onMouseLeave={() => handleOnMouseLeave()}
           onClick={() => handleOnClick(resumeSections.EXPERIENCE)}
           className='flex-[2.9]'
         >
@@ -74,7 +78,7 @@ const Resume = () => {
         </button>
         <button
           onMouseEnter={() => setShowHoverSection(resumeSections.EDUCATION)}
-          onMouseLeave={() => setShowHoverSection('')}
+          onMouseLeave={() => handleOnMouseLeave()}
           onClick={() => handleOnClick(resumeSections.EDUCATION)}
           className='flex-1'
         >
