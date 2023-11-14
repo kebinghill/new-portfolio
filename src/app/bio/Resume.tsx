@@ -69,6 +69,17 @@ const Resume = () => {
         </button>
       </div>
       <div>
+        {isContactShown && (
+          <div>
+            <h1>CONTACT</h1>
+            <h2>KEVIN GIL</h2>
+            <h3>SOFTWARE ENGINEER</h3>
+            <p>PHONE: 973-454-3616</p>
+            <p>EMAIL: 93kevingil@gmail.com</p>
+            <p>GITHUB: https://github.com/kebinghill</p>
+            <p>LINKEDIN: https://linkedin.com/in/kebinghill</p>
+          </div>
+        )}
         {isSummaryShown && (
           <div>
             <h2>SUMMARY</h2>
@@ -86,16 +97,86 @@ const Resume = () => {
             <h2>SKILLS</h2>
 
             <h4>LANGUAGES</h4>
+            <p>Javascript, Typescript</p>
+            <h4>FRONTEND</h4>
             <p>
-              Languages: Javascript, Typescript Frontend: HTML, CSS, React,
-              Redux, NextJS, Ant Design, Tailwind CSS, Material UI, Axios
-              Backend: Node, PostgreSQL, TypeORM, NestJS, Sequelize Other:
+              HTML, CSS, React, Redux, NextJS, Ant Design, Tailwind CSS,
+              Material UI, Axios
+            </p>
+            <h4>BACKEND</h4>
+            <p>Node, PostgreSQL, TypeORM, NestJS, Sequelize </p>
+            <h4>OTHER</h4>
+            <p>
               Moment-tz, Lodash, Jest, Design and development of APIs, Web
               Architecture, Git, HTTP, REST, Database Storage, Design
               Fundamentals, NPM, AWS, Docker Soft: Complex problem-solving,
               attention to detail, prioritization
             </p>
-            <p></p>
+          </div>
+        )}
+        {isExperienceShown && (
+          <div>
+            <h1>WORK EXPERIENCE</h1>
+            <p>Software Engineer</p>
+            <p>MONUMENT | NEW YORK, NY | 2022 - 2023</p>{' '}
+            <p>
+              Contributed to the development and enhancement of features in
+              backend and frontend repositories for a telehealth start-up.
+            </p>
+            <ul>
+              <li>
+                ▪ Created and implemented the “Daily Affirmations” feature,
+                allowing users to receive personalized affirmations on their
+                dashboards. Integrated with Customer.io to send affirmations via
+                text messages to opted-in users.
+              </li>
+              <li>
+                ▪ Developed relational tables, services methods, and testing to
+                facilitate the integration of employers on the app, expanding
+                our reach and providing additional support to those in need.
+              </li>
+              <li>
+                ▪ Resolved various user experience bugs promptly and effectively
+                to ensure seamless usage of the application.
+              </li>
+            </ul>
+            <p>Manager of Care Coordination</p>
+            <p>MONUMENT | NEW YORK, NY | 2020 - 2022</p>
+            <p>
+              Managed a small team of 5 care coordinators to assist members with
+              their user experience on the telehealth platform.
+            </p>
+            <ul>
+              <li>
+                ▪ Documented support processes and escalated bugs to the
+                engineering team.
+              </li>
+              <li>
+                ▪ Maintained above an overall 90% satisfaction rating amongst
+                app users.
+              </li>
+            </ul>
+            <p>Technical Support Associate</p>
+            <p>PELOTON | NEW YORK, NY | 2017 - 2019</p>
+            <p>
+              Connected directly with Peloton users to troubleshoot hardware and
+              software technical complications.
+            </p>
+            <ul>
+              <li>
+                ▪ Provided support for both the Peloton native app and Peloton
+                bike.
+              </li>
+            </ul>
+          </div>
+        )}
+        {isEducationShown && (
+          <div>
+            <h1>EDUCATION</h1>
+            <p>Fullstack Software Engineering Immersive Bootcamp - 2021</p>
+            <p>Full-Stack Academy (New York, NY)</p>
+            <p>Bachelor of Science in Nuclear Medicine Technology - 2015</p>
+            <p>Manhattan College (Bronx, NY)</p>
           </div>
         )}
       </div>
