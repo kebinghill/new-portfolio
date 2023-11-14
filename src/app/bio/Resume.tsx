@@ -11,7 +11,7 @@ const Resume = () => {
 
   return (
     <>
-      <div className='bg-cover bg-center bg-no-repeat bg-[url("/resume.png")] rounded min-w-[370px] max-w-[600px] aspect-[3/4] flex flex-col'>
+      <div className='bg-cover bg-center bg-no-repeat bg-[url("/resume.png")] rounded sm:w-[100vw] max-w-[600px] aspect-[3/4] flex flex-col'>
         <button
           onMouseEnter={() => setIsContactShown(true)}
           onMouseLeave={() => setIsContactShown(false)}

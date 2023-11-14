@@ -3,7 +3,7 @@ import Resume from './Resume';
 
 const BioPage = () => {
   return (
-    <div>
+    <div className='min-w-[100vw]'>
       <Header />
       <Resume />
     </div>
