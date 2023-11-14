@@ -2,66 +2,83 @@
 
 import { useState } from 'react';
 
+const resumeSections = {
+  CONTACT: 'contact',
+  SUMMARY: 'summary',
+  SKILLS: 'skills',
+  EXPERIENCE: 'experience',
+  EDUCATION: 'education',
+} as const;
+
+type resumeKeys = keyof typeof resumeSections;
+type sectionValues = (typeof resumeSections)[resumeKeys];
+
 const Resume = () => {
-  const [isContactShown, setIsContactShown] = useState(false);
-  const [isSummaryShown, setIsSummaryShown] = useState(false);
-  const [isSkillsShown, setIsSkillsShown] = useState(false);
-  const [isExperienceShown, setIsExperienceShown] = useState(false);
-  const [isEducationShown, setIsEducationShown] = useState(false);
+  const [showHoverSection, setShowHoverSection] = useState('');
+  const [showSection, setShowSection] = useState('');
+
+  const handleOnClick = (section: sectionValues) => {
+    setShowSection(section);
+  };
 
   return (
     <>
       <div className='bg-cover bg-center bg-no-repeat bg-[url("/resume.png")] rounded sm:w-[100vw] max-w-[600px] aspect-[3/4] flex flex-col'>
         <button
-          onMouseEnter={() => setIsContactShown(true)}
-          onMouseLeave={() => setIsContactShown(false)}
+          onMouseEnter={() => setShowHoverSection(resumeSections.CONTACT)}
+          onMouseLeave={() => setShowHoverSection('')}
+          onClick={() => handleOnClick(resumeSections.CONTACT)}
           className='flex-[0.8]'
         >
-          {isContactShown && (
+          {showHoverSection === resumeSections.CONTACT && (
             <div className='flex justify-center items-center text-5xl bg-stone-900/90 h-[100%]'>
               CONTACT
             </div>
           )}
         </button>
         <button
-          onMouseEnter={() => setIsSummaryShown(true)}
-          onMouseLeave={() => setIsSummaryShown(false)}
+          onMouseEnter={() => setShowHoverSection(resumeSections.SUMMARY)}
+          onMouseLeave={() => setShowHoverSection('')}
+          onClick={() => handleOnClick(resumeSections.SUMMARY)}
           className='flex-[0.5]'
         >
-          {isSummaryShown && (
+          {showHoverSection === resumeSections.SUMMARY && (
             <div className='flex justify-center items-center text-5xl bg-stone-900/90 h-[100%]'>
               SUMMARY
             </div>
           )}
         </button>
         <button
-          onMouseEnter={() => setIsSkillsShown(true)}
-          onMouseLeave={() => setIsSkillsShown(false)}
+          onMouseEnter={() => setShowHoverSection(resumeSections.SKILLS)}
+          onMouseLeave={() => setShowHoverSection('')}
+          onClick={() => handleOnClick(resumeSections.SKILLS)}
           className='flex-[0.8]'
         >
-          {isSkillsShown && (
+          {showHoverSection === resumeSections.SKILLS && (
             <div className='flex justify-center items-center text-5xl bg-stone-900/90 h-[100%]'>
               SKILLS
             </div>
           )}
         </button>
         <button
-          onMouseEnter={() => setIsExperienceShown(true)}
-          onMouseLeave={() => setIsExperienceShown(false)}
+          onMouseEnter={() => setShowHoverSection(resumeSections.EXPERIENCE)}
+          onMouseLeave={() => setShowHoverSection('')}
+          onClick={() => handleOnClick(resumeSections.EXPERIENCE)}
           className='flex-[2.9]'
         >
-          {isExperienceShown && (
+          {showHoverSection === resumeSections.EXPERIENCE && (
             <div className='flex justify-center items-center  text-5xl bg-stone-900/90 h-[100%]'>
               WORK EXPERIENCE
             </div>
           )}
         </button>
         <button
-          onMouseEnter={() => setIsEducationShown(true)}
-          onMouseLeave={() => setIsEducationShown(false)}
+          onMouseEnter={() => setShowHoverSection(resumeSections.EDUCATION)}
+          onMouseLeave={() => setShowHoverSection('')}
+          onClick={() => handleOnClick(resumeSections.EDUCATION)}
           className='flex-1'
         >
-          {isEducationShown && (
+          {showHoverSection === resumeSections.EDUCATION && (
             <div className='flex justify-center items-center text-5xl bg-stone-900/90 h-[100%]'>
               EDUCATION
             </div>
@@ -69,7 +86,7 @@ const Resume = () => {
         </button>
       </div>
       <div>
-        {isContactShown && (
+        {showSection === resumeSections.CONTACT && (
           <div>
             <h1>CONTACT</h1>
             <h2>KEVIN GIL</h2>
@@ -80,7 +97,7 @@ const Resume = () => {
             <p>LINKEDIN: https://linkedin.com/in/kebinghill</p>
           </div>
         )}
-        {isSummaryShown && (
+        {showSection === resumeSections.SUMMARY && (
           <div>
             <h2>SUMMARY</h2>
             <p>
@@ -92,7 +109,7 @@ const Resume = () => {
             </p>
           </div>
         )}
-        {isSkillsShown && (
+        {showSection === resumeSections.SKILLS && (
           <div>
             <h2>SKILLS</h2>
 
@@ -114,7 +131,7 @@ const Resume = () => {
             </p>
           </div>
         )}
-        {isExperienceShown && (
+        {showSection === resumeSections.EXPERIENCE && (
           <div>
             <h1>WORK EXPERIENCE</h1>
             <p>Software Engineer</p>
@@ -170,7 +187,7 @@ const Resume = () => {
             </ul>
           </div>
         )}
-        {isEducationShown && (
+        {showSection === resumeSections.EDUCATION && (
           <div>
             <h1>EDUCATION</h1>
             <p>Fullstack Software Engineering Immersive Bootcamp - 2021</p>
