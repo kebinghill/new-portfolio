@@ -26,8 +26,8 @@ const Resume = () => {
   };
 
   return (
-    <>
-      <div className='bg-cover bg-center bg-no-repeat bg-[url("/resume.png")] rounded sm:w-[100vw] max-w-[600px] aspect-[3/4] flex flex-col'>
+    <div className='flex flex-col items-center md:flex-row md:justify-center'>
+      <div className='bg-cover bg-center bg-no-repeat bg-[url("/resume.png")] rounded w-[100vw] max-w-[600px] md:w-[600px] aspect-[3/4] flex flex-col'>
         <button
           onMouseEnter={() => setShowHoverSection(resumeSections.CONTACT)}
           onMouseLeave={() => handleOnMouseLeave()}
@@ -213,7 +213,7 @@ const Resume = () => {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 };
 
