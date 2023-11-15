@@ -26,8 +26,8 @@ const Resume = () => {
   };
 
   return (
-    <div className='flex flex-col items-center md:flex-row md:justify-center'>
-      <div className='bg-cover bg-center bg-no-repeat bg-[url("/resume.png")] rounded w-[100vw] max-w-[600px] md:w-[600px] aspect-[3/4] flex flex-col'>
+    <div className='flex flex-col items-center md:flex-row md:justify-center md:items-start'>
+      <div className='bg-cover bg-center bg-no-repeat bg-[url("/resume.png")] rounded w-[100vw] md:w-[600px] aspect-[3/4] flex flex-col'>
         <button
           onMouseEnter={() => setShowHoverSection(resumeSections.CONTACT)}
           onMouseLeave={() => handleOnMouseLeave()}
@@ -89,7 +89,7 @@ const Resume = () => {
           )}
         </button>
       </div>
-      <div className=''>
+      <div className='md:w-[600px]'>
         {showSection === resumeSections.CONTACT && (
           <div className='flex flex-col items-center border'>
             <p className='flex justify-center text-2xl font-extralight border w-[100%]'>
@@ -114,9 +114,11 @@ const Resume = () => {
           </div>
         )}
         {showSection === resumeSections.SUMMARY && (
-          <div>
-            <h2>SUMMARY</h2>
-            <p>
+          <div className='border max-w-[600px]'>
+            <p className='flex justify-center text-2xl font-extralight border w-[100%]'>
+              SUMMARY
+            </p>
+            <p className='flex items-center text-lg font-thin px-[2%]'>
               Full Stack software developer with extensive knowledge of building
               web applications using a variety of languages and frameworks
               looking for a full-time remote position. Passionate about
