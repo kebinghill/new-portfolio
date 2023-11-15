@@ -89,16 +89,28 @@ const Resume = () => {
           )}
         </button>
       </div>
-      <div>
+      <div className=''>
         {showSection === resumeSections.CONTACT && (
-          <div>
-            <h1>CONTACT</h1>
-            <h2>KEVIN GIL</h2>
-            <h3>SOFTWARE ENGINEER</h3>
-            <p>PHONE: 973-454-3616</p>
-            <p>EMAIL: 93kevingil@gmail.com</p>
-            <p>GITHUB: https://github.com/kebinghill</p>
-            <p>LINKEDIN: https://linkedin.com/in/kebinghill</p>
+          <div className='flex flex-col items-center border'>
+            <p className='flex justify-center text-2xl font-extralight border w-[100%]'>
+              CONTACT
+            </p>
+            <p className='text-lg font-thin'>KEVIN GIL</p>
+            <p className='text-lg font-thin'>SOFTWARE ENGINEER</p>
+            <p className='text-lg font-thin'>
+              <a href='tel:+19734543616'>973-454-3616</a>
+            </p>
+            <p className='text-lg font-thin'>
+              <a href='mailto:93kevingil@gmail.com'>93KEVINGIL@GMAIL.COM</a>
+            </p>
+            <p className='flex justify-between text-lg font-thin pl-[5%] pr-[5%] w-[100vw] max-w-[400px]'>
+              <a href='https://github.com/kebinghill' target='_blank'>
+                GITHUB
+              </a>
+              <a href='https://linkedin.com/in/kebinghill' target='_blank'>
+                LINKEDIN
+              </a>
+            </p>
           </div>
         )}
         {showSection === resumeSections.SUMMARY && (
@@ -140,7 +152,7 @@ const Resume = () => {
             <h1>WORK EXPERIENCE</h1>
             <p>Software Engineer</p>
             <p>MONUMENT | NEW YORK, NY | 2022 - 2023</p>{' '}
-            <p>
+            <p className='italic'>
               Contributed to the development and enhancement of features in
               backend and frontend repositories for a telehealth start-up.
             </p>
@@ -163,7 +175,7 @@ const Resume = () => {
             </ul>
             <p>Manager of Care Coordination</p>
             <p>MONUMENT | NEW YORK, NY | 2020 - 2022</p>
-            <p>
+            <p className='italic'>
               Managed a small team of 5 care coordinators to assist members with
               their user experience on the telehealth platform.
             </p>
@@ -179,7 +191,7 @@ const Resume = () => {
             </ul>
             <p>Technical Support Associate</p>
             <p>PELOTON | NEW YORK, NY | 2017 - 2019</p>
-            <p>
+            <p className='italic'>
               Connected directly with Peloton users to troubleshoot hardware and
               software technical complications.
             </p>
