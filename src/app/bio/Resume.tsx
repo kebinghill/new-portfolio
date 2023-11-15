@@ -231,14 +231,24 @@ const Resume = () => {
           </div>
         )}
         {showSection === resumeSections.EDUCATION && (
-          <div>
-            <p className='flex justify-center text-2xl font-extralight border w-[100%]'>
+          <div className='border'>
+            <p className='flex justify-center text-2xl font-extralight border-b w-[100%]'>
               EDUCATION
             </p>
-            <p>Fullstack Software Engineering Immersive Bootcamp - 2021</p>
-            <p>Full-Stack Academy (New York, NY)</p>
-            <p>Bachelor of Science in Nuclear Medicine Technology - 2015</p>
-            <p>Manhattan College (Bronx, NY)</p>
+            <div className='flex flex-col items-center px-[4%]'>
+              <p className='text-lg font-thin pt-[2%] text-center'>
+                Full Stack Software Engineering Immersive Bootcamp - 2021
+              </p>
+              <p className='text-base font-extralight pb-[4%]'>
+                Fullstack Academy [ New York, NY ]
+              </p>
+              <p className='text-lg font-thin text-center'>
+                Bachelor of Science in Nuclear Medicine Technology - 2015
+              </p>
+              <p className='text-base font-extralight pb-[2%]'>
+                Manhattan College [ Bronx, NY ]
+              </p>
+            </div>
           </div>
         )}
       </div>
