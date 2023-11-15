@@ -89,13 +89,13 @@ const Resume = () => {
           )}
         </button>
       </div>
-      <div className='md:w-[600px]'>
+      <div className='w-[100%] md:w-[600px]'>
         {showSection === resumeSections.CONTACT && (
           <div className='flex flex-col items-center border'>
-            <p className='flex justify-center text-2xl font-extralight border w-[100%]'>
+            <p className='flex justify-center text-2xl font-extralight border-b w-[100%]'>
               CONTACT
             </p>
-            <p className='text-lg font-thin'>KEVIN GIL</p>
+            <p className='text-lg font-thin pt-[1%]'>KEVIN GIL</p>
             <p className='text-lg font-thin'>SOFTWARE ENGINEER</p>
             <p className='text-lg font-thin'>
               <a href='tel:+19734543616'>973-454-3616</a>
@@ -103,7 +103,7 @@ const Resume = () => {
             <p className='text-lg font-thin'>
               <a href='mailto:93kevingil@gmail.com'>93KEVINGIL@GMAIL.COM</a>
             </p>
-            <p className='flex justify-between text-lg font-thin pl-[5%] pr-[5%] w-[100vw] max-w-[400px]'>
+            <p className='flex justify-between text-lg font-thin px-[5%] w-[100%] max-w-[400px]'>
               <a href='https://github.com/kebinghill' target='_blank'>
                 GITHUB
               </a>
@@ -114,11 +114,11 @@ const Resume = () => {
           </div>
         )}
         {showSection === resumeSections.SUMMARY && (
-          <div className='border max-w-[600px]'>
-            <p className='flex justify-center text-2xl font-extralight border w-[100%]'>
+          <div className='border'>
+            <p className='flex justify-center text-2xl font-extralight border-b w-[100%]'>
               SUMMARY
             </p>
-            <p className='flex items-center text-lg font-thin px-[2%]'>
+            <p className='flex items-center text-lg font-thin p-[2%]'>
               Full Stack software developer with extensive knowledge of building
               web applications using a variety of languages and frameworks
               looking for a full-time remote position. Passionate about
@@ -128,30 +128,47 @@ const Resume = () => {
           </div>
         )}
         {showSection === resumeSections.SKILLS && (
-          <div>
-            <h2>SKILLS</h2>
-
-            <h4>LANGUAGES</h4>
-            <p>Javascript, Typescript</p>
-            <h4>FRONTEND</h4>
-            <p>
-              HTML, CSS, React, Redux, NextJS, Ant Design, Tailwind CSS,
-              Material UI, Axios
+          <div className='border'>
+            <p className='flex justify-center text-2xl font-extralight border-b w-[100%]'>
+              SKILLS
             </p>
-            <h4>BACKEND</h4>
-            <p>Node, PostgreSQL, TypeORM, NestJS, Sequelize </p>
-            <h4>OTHER</h4>
-            <p>
-              Moment-tz, Lodash, Jest, Design and development of APIs, Web
-              Architecture, Git, HTTP, REST, Database Storage, Design
-              Fundamentals, NPM, AWS, Docker Soft: Complex problem-solving,
-              attention to detail, prioritization
-            </p>
+            <div className='flex flex-col pl-[5%] py-[2%]'>
+              <p className='text-xl font-extralight underline decoration-0'>
+                LANGUAGES
+              </p>
+              <p className='text-lg font-thin px-[5%]'>
+                Javascript, Typescript
+              </p>
+              <p className='text-xl font-extralight underline decoration-0'>
+                FRONTEND
+              </p>
+              <p className='text-lg font-thin px-[5%]'>
+                HTML, CSS, React, Redux, NextJS, Ant Design, Tailwind CSS,
+                Material UI, Axios
+              </p>
+              <p className='text-xl font-extralight underline decoration-0'>
+                BACKEND
+              </p>
+              <p className='text-lg font-thin px-[5%]'>
+                Node, PostgreSQL, TypeORM, NestJS, Sequelize{' '}
+              </p>
+              <p className='text-xl font-extralight underline decoration-0'>
+                OTHER
+              </p>
+              <p className='text-lg font-thin px-[5%]'>
+                Moment-tz, Lodash, Jest, Design and development of APIs, Web
+                Architecture, Git, HTTP, REST, Database Storage, Design
+                Fundamentals, NPM, AWS, Docker Soft: Complex problem-solving,
+                attention to detail, prioritization
+              </p>
+            </div>
           </div>
         )}
         {showSection === resumeSections.EXPERIENCE && (
           <div>
-            <h1>WORK EXPERIENCE</h1>
+            <p className='flex justify-center text-2xl font-extralight border w-[100%]'>
+              WORK EXPERIENCE
+            </p>
             <p>Software Engineer</p>
             <p>MONUMENT | NEW YORK, NY | 2022 - 2023</p>{' '}
             <p className='italic'>
@@ -207,7 +224,9 @@ const Resume = () => {
         )}
         {showSection === resumeSections.EDUCATION && (
           <div>
-            <h1>EDUCATION</h1>
+            <p className='flex justify-center text-2xl font-extralight border w-[100%]'>
+              EDUCATION
+            </p>
             <p>Fullstack Software Engineering Immersive Bootcamp - 2021</p>
             <p>Full-Stack Academy (New York, NY)</p>
             <p>Bachelor of Science in Nuclear Medicine Technology - 2015</p>
