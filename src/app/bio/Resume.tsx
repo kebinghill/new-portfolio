@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const resumeSections = {
   CONTACT: 'contact',
@@ -21,10 +21,16 @@ const Resume = () => {
 
   const handleOnClick = (section: sectionValues) => {
     setShowSection(section);
-    if (scrollRef.current) {
-      scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
-    }
   };
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
+    }
+  }, [showSection]);
 
   const handleOnMouseLeave = () => {
     setShowHoverSection('');
@@ -95,8 +101,9 @@ const Resume = () => {
         </button>
       </div>
       <div className='w-[100%] md:w-[600px]'>
+        <div ref={scrollRef}></div>
         {showSection === resumeSections.CONTACT && (
-          <div ref={scrollRef} className='flex flex-col items-center border'>
+          <div className='flex flex-col items-center border'>
             <p className='flex justify-center text-2xl font-extralight border-b w-[100%]'>
               CONTACT
             </p>
@@ -123,7 +130,7 @@ const Resume = () => {
             <p className='flex justify-center text-2xl font-extralight border-b w-[100%]'>
               SUMMARY
             </p>
-            <p className='flex items-center text-lg font-thin p-[2%]'>
+            <p className='flex items-center text-lg font-thin px-[4%] py-[2%]'>
               Full Stack software developer with extensive knowledge of building
               web applications using a variety of languages and frameworks
               looking for a full-time remote position. Passionate about
@@ -257,7 +264,6 @@ const Resume = () => {
           </div>
         )}
       </div>
-      <div ref={scrollRef}></div>
     </div>
   );
 };
