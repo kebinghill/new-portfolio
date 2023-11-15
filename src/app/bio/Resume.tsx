@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const resumeSections = {
   CONTACT: 'contact',
@@ -17,8 +17,13 @@ const Resume = () => {
   const [showHoverSection, setShowHoverSection] = useState('');
   const [showSection, setShowSection] = useState('');
 
+  const scrollRef = useRef<HTMLInputElement>(null);
+
   const handleOnClick = (section: sectionValues) => {
     setShowSection(section);
+    if (scrollRef.current) {
+      scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }
   };
 
   const handleOnMouseLeave = () => {
@@ -91,7 +96,7 @@ const Resume = () => {
       </div>
       <div className='w-[100%] md:w-[600px]'>
         {showSection === resumeSections.CONTACT && (
-          <div className='flex flex-col items-center border'>
+          <div ref={scrollRef} className='flex flex-col items-center border'>
             <p className='flex justify-center text-2xl font-extralight border-b w-[100%]'>
               CONTACT
             </p>
@@ -252,6 +257,7 @@ const Resume = () => {
           </div>
         )}
       </div>
+      <div ref={scrollRef}></div>
     </div>
   );
 };
