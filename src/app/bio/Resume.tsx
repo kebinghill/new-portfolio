@@ -165,61 +165,69 @@ const Resume = () => {
           </div>
         )}
         {showSection === resumeSections.EXPERIENCE && (
-          <div>
-            <p className='flex justify-center text-2xl font-extralight border w-[100%]'>
+          <div className='border'>
+            <p className='flex justify-center text-2xl font-extralight border-b w-[100%]'>
               WORK EXPERIENCE
             </p>
-            <p>Software Engineer</p>
-            <p>MONUMENT | NEW YORK, NY | 2022 - 2023</p>{' '}
-            <p className='italic'>
-              Contributed to the development and enhancement of features in
-              backend and frontend repositories for a telehealth start-up.
-            </p>
-            <ul>
-              <li>
-                ▪ Created and implemented the “Daily Affirmations” feature,
+            <div className='flex flex-col px-[5%] py-[2%]'>
+              <p className='text-xl font-extralight underline decoration-0'>
+                Software Engineer
+              </p>
+              <p className='text-sm font-thin pb-[1%]'>
+                MONUMENT | NEW YORK, NY | 2022 - 2023
+              </p>
+              <p className='text-base italic font-extralight pb-[1%]'>
+                Contributed to the development and enhancement of features in
+                backend and frontend repositories for a telehealth start-up.
+              </p>
+              <li className='text-base font-thin pb-[1%]'>
+                Created and implemented the “Daily Affirmations” feature,
                 allowing users to receive personalized affirmations on their
                 dashboards. Integrated with Customer.io to send affirmations via
                 text messages to opted-in users.
               </li>
-              <li>
-                ▪ Developed relational tables, services methods, and testing to
+              <li className='text-base font-thin pb-[1%]'>
+                Developed relational tables, services methods, and testing to
                 facilitate the integration of employers on the app, expanding
                 our reach and providing additional support to those in need.
               </li>
-              <li>
-                ▪ Resolved various user experience bugs promptly and effectively
+              <li className='text-base font-thin pb-[1%]'>
+                Resolved various user experience bugs promptly and effectively
                 to ensure seamless usage of the application.
               </li>
-            </ul>
-            <p>Manager of Care Coordination</p>
-            <p>MONUMENT | NEW YORK, NY | 2020 - 2022</p>
-            <p className='italic'>
-              Managed a small team of 5 care coordinators to assist members with
-              their user experience on the telehealth platform.
-            </p>
-            <ul>
-              <li>
-                ▪ Documented support processes and escalated bugs to the
+              <p className='text-xl font-extralight underline decoration-0'>
+                Manager of Care Coordination
+              </p>
+              <p className='text-sm font-thin pb-[1%]'>
+                MONUMENT | NEW YORK, NY | 2020 - 2022
+              </p>
+              <p className='text-base italic font-extralight pb-[1%]'>
+                Managed a small team of 5 care coordinators to assist members
+                with their user experience on the telehealth platform.
+              </p>
+              <li className='text-base font-thin pb-[1%]'>
+                Documented support processes and escalated bugs to the
                 engineering team.
               </li>
-              <li>
-                ▪ Maintained above an overall 90% satisfaction rating amongst
-                app users.
+              <li className='text-base font-thin pb-[1%]'>
+                Maintained above an overall 90% satisfaction rating amongst app
+                users.
               </li>
-            </ul>
-            <p>Technical Support Associate</p>
-            <p>PELOTON | NEW YORK, NY | 2017 - 2019</p>
-            <p className='italic'>
-              Connected directly with Peloton users to troubleshoot hardware and
-              software technical complications.
-            </p>
-            <ul>
-              <li>
-                ▪ Provided support for both the Peloton native app and Peloton
+              <p className='text-xl font-extralight underline decoration-0'>
+                Technical Support Associate
+              </p>
+              <p className='text-sm font-thin pb-[1%]'>
+                PELOTON | NEW YORK, NY | 2017 - 2019
+              </p>
+              <p className='text-base italic font-extralight pb-[1%]'>
+                Connected directly with Peloton users to troubleshoot hardware
+                and software technical complications.
+              </p>
+              <li className='text-base font-thin pb-[1%]'>
+                Provided support for both the Peloton native app and Peloton
                 bike.
               </li>
-            </ul>
+            </div>
           </div>
         )}
         {showSection === resumeSections.EDUCATION && (
