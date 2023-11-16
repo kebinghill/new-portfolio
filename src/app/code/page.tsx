@@ -7,3 +7,5 @@ const CodePage = () => {
     </div>
   );
 };
+
+export default CodePage;
