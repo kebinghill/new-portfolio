@@ -4,15 +4,19 @@ import { Dispatch, SetStateAction } from 'react';
 import { Modal } from 'flowbite-react';
 import { FaGithubSquare } from 'react-icons/fa';
 
+const descriptions = ['OH STEVE', 'ONLY YOU'];
+
 const ProjectModal = ({
   openModal,
   setOpenModal,
-  description,
+  currentIdx,
 }: {
   openModal: boolean;
   setOpenModal: Dispatch<SetStateAction<boolean>>;
-  description: any;
+  currentIdx: number;
 }) => {
+  // const [currentDescription, setCurrentDescription] = useState(descriptions[0]);
+
   return (
     <Modal
       show={openModal}
@@ -27,9 +31,7 @@ const ProjectModal = ({
       </Modal.Header>
       <Modal.Body className='bg-black border-x border-b'>
         <div className='space-y-6 p-6 bg-black'>
-          <p className='text-lg font-thin'>
-            PASS STATE DESCRIPTION OF PROJECT HERE
-          </p>
+          <p className='text-lg font-thin'></p>
         </div>
       </Modal.Body>
       {/* <Modal.Footer className='border bg-black'>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Carousel } from 'flowbite-react';
 import Image from 'next/image';
 import ProjectModal from './ProjectModal';
@@ -11,16 +11,16 @@ const images = [
   <Image
     src='/slctr-code.png'
     key='slctr'
-    width={1000}
-    height={1000}
+    width={700}
+    height={700}
     alt='SLCTR'
     className='aspect-[14/12] flex h-full w-full items-center justify-center'
   />,
   <Image
     src='/portfolio-code.png'
     key='portfolio'
-    width={1000}
-    height={1000}
+    width={700}
+    height={700}
     alt=''
     className='aspect-[14/12] flex h-full w-full items-center justify-center'
   />,
@@ -28,12 +28,14 @@ const images = [
 
 const titles = ['SLCTR APP', 'PORTFOLIO APP'];
 
-const descriptions = ['', ''];
-
 const ProjectCarousel = () => {
   const [currentTitle, setCurrentTitle] = useState(titles[0]);
-  const [currentDescription, setCurrentDescription] = useState(descriptions[0]);
   const [openModal, setOpenModal] = useState(false);
+
+  // useEffect(() => {
+  //   const idx = titles.indexOf(currentTitle);
+  //   setCurrentDescription(descriptions[idx]);
+  // }, [currentTitle]);
 
   return (
     <div>
@@ -57,7 +59,7 @@ const ProjectCarousel = () => {
       <ProjectModal
         openModal={openModal}
         setOpenModal={setOpenModal}
-        description={currentDescription}
+        currentIdx={titles.indexOf(currentTitle)}
       ></ProjectModal>
     </div>
   );
