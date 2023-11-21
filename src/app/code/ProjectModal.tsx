@@ -1,6 +1,6 @@
 'use client';
 
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useState, useEffect } from 'react';
 import { Modal } from 'flowbite-react';
 import { FaGithubSquare } from 'react-icons/fa';
 
@@ -15,7 +15,11 @@ const ProjectModal = ({
   setOpenModal: Dispatch<SetStateAction<boolean>>;
   currentIdx: number;
 }) => {
-  // const [currentDescription, setCurrentDescription] = useState(descriptions[0]);
+  const [currentDescription, setCurrentDescription] = useState(descriptions[0]);
+
+  useEffect(() => {
+    setCurrentDescription(descriptions[currentIdx]);
+  }, [currentIdx]);
 
   return (
     <Modal
@@ -31,7 +35,7 @@ const ProjectModal = ({
       </Modal.Header>
       <Modal.Body className='bg-black border-x border-b'>
         <div className='space-y-6 p-6 bg-black'>
-          <p className='text-lg font-thin'></p>
+          <p className='text-lg font-thin'>{currentDescription}</p>
         </div>
       </Modal.Body>
       {/* <Modal.Footer className='border bg-black'>
