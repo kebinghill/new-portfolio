@@ -1,50 +1,50 @@
-'use client';
+// 'use client';
 
-import { Dispatch, SetStateAction, useState, useEffect } from 'react';
-import { Modal } from 'flowbite-react';
-import { FaGithubSquare } from 'react-icons/fa';
+// import { Dispatch, SetStateAction, useState, useEffect } from 'react';
+// // import { Modal } from 'flowbite-react';
+// import { FaGithubSquare } from 'react-icons/fa';
 
-const descriptions = ['OH STEVE', 'ONLY YOU'];
+// const descriptions = ['OH STEVE', 'ONLY YOU'];
 
-const ProjectModal = ({
-  openModal,
-  setOpenModal,
-  currentIdx,
-}: {
-  openModal: boolean;
-  setOpenModal: Dispatch<SetStateAction<boolean>>;
-  currentIdx: number;
-}) => {
-  const [currentDescription, setCurrentDescription] = useState(descriptions[0]);
+// const ProjectModal = ({
+//   openModal,
+//   setOpenModal,
+//   currentIdx,
+// }: {
+//   openModal: boolean;
+//   setOpenModal: Dispatch<SetStateAction<boolean>>;
+//   currentIdx: number;
+// }) => {
+//   const [currentDescription, setCurrentDescription] = useState(descriptions[0]);
 
-  useEffect(() => {
-    setCurrentDescription(descriptions[currentIdx]);
-  }, [currentIdx]);
+//   useEffect(() => {
+//     setCurrentDescription(descriptions[currentIdx]);
+//   }, [currentIdx]);
 
-  return (
-    <Modal
-      show={openModal}
-      onClose={() => setOpenModal(false)}
-      position={'center'}
-      dismissible
-    >
-      <Modal.Header className='bg-black border-x border-t'>
-        <a href=''>
-          <FaGithubSquare className='h-[34px] w-[34px] text-white' />
-        </a>
-      </Modal.Header>
-      <Modal.Body className='bg-black border-x border-b'>
-        <div className='space-y-6 p-6 bg-black'>
-          <p className='text-lg font-thin'>{currentDescription}</p>
-        </div>
-      </Modal.Body>
-      {/* <Modal.Footer className='border bg-black'>
-        <Button color='dark' onClick={() => setOpenModal(false)}>
-          Close
-        </Button>
-      </Modal.Footer> */}
-    </Modal>
-  );
-};
+//   return (
+//     <Modal
+//       show={openModal}
+//       onClose={() => setOpenModal(false)}
+//       position={'center'}
+//       dismissible
+//     >
+//       <Modal.Header className='bg-black border-x border-t'>
+//         <a href=''>
+//           <FaGithubSquare className='h-[34px] w-[34px] text-white' />
+//         </a>
+//       </Modal.Header>
+//       <Modal.Body className='bg-black border-x border-b'>
+//         <div className='space-y-6 p-6 bg-black'>
+//           <p className='text-lg font-thin'>{currentDescription}</p>
+//         </div>
+//       </Modal.Body>
+//       {/* <Modal.Footer className='border bg-black'>
+//         <Button color='dark' onClick={() => setOpenModal(false)}>
+//           Close
+//         </Button>
+//       </Modal.Footer> */}
+//     </Modal>
+//   );
+// };
 
-export default ProjectModal;
+// export default ProjectModal;
