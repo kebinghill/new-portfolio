@@ -4,11 +4,14 @@ import { useState, useEffect, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
 
+import ProjectModal from './ProjectModal';
+
 const images = ['/slctr-code.png', '/portfolio-code.png'];
 const titles = ['SLCTR APP', 'PORTFOLIO APP'];
 
 const EmblaCarousel = () => {
   const [currentTitle, setCurrentTitle] = useState(titles[0]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: 'center',
     loop: false,
@@ -37,17 +40,24 @@ const EmblaCarousel = () => {
       <div className='overflow-hidden md:w-[700px] w-[95vw]' ref={emblaRef}>
         <div className='flex aspect-[14/12]'>
           {images.map((image) => (
-            <Image
-              src={image}
-              key={image}
-              width={700}
-              height={700}
-              alt={image}
+            <button
               className='aspect-[14/12]'
-            />
+              key={image}
+              onClick={() => setIsModalOpen(true)}
+            >
+              <Image
+                src={image}
+                key={image}
+                width={700}
+                height={700}
+                alt={image}
+                className='aspect-[14/12]'
+              />
+            </button>
           ))}
         </div>
       </div>
+      <ProjectModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </div>
   );
 };

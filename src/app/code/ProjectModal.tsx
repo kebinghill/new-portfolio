@@ -1,50 +1,44 @@
-// 'use client';
+'use client';
 
-// import { Dispatch, SetStateAction, useState, useEffect } from 'react';
-// // import { Modal } from 'flowbite-react';
-// import { FaGithubSquare } from 'react-icons/fa';
+import { useState } from 'react';
+import { FaGithubSquare } from 'react-icons/fa';
+import { Dialog } from '@headlessui/react';
 
-// const descriptions = ['OH STEVE', 'ONLY YOU'];
+const ProjectModal = ({
+  isModalOpen,
+  setIsModalOpen,
+}: {
+  isModalOpen: boolean;
+  setIsModalOpen: any;
+}) => {
+  return (
+    <Dialog
+      open={isModalOpen}
+      onClose={() => setIsModalOpen(false)}
+      className='border relative z-50'
+    >
+      <div className='fixed inset-0 bg-black/30' aria-hidden='true' />
+      <div className='fixed inset-0 flex w-screen items-center justify-center p-4 '>
+        <Dialog.Panel className='mx-[5vw] rounded bg-black'>
+          <Dialog.Title className='flex items-center'>
+            <FaGithubSquare className='h-[32px] w-[32px]' />
+            GITHUB REPO
+          </Dialog.Title>
+          <Dialog.Description>
+            This will permanently deactivate your account
+          </Dialog.Description>
 
-// const ProjectModal = ({
-//   openModal,
-//   setOpenModal,
-//   currentIdx,
-// }: {
-//   openModal: boolean;
-//   setOpenModal: Dispatch<SetStateAction<boolean>>;
-//   currentIdx: number;
-// }) => {
-//   const [currentDescription, setCurrentDescription] = useState(descriptions[0]);
+          <p>
+            Are you sure you want to deactivate your account? All of your data
+            will be permanently removed. This action cannot be undone.
+          </p>
 
-//   useEffect(() => {
-//     setCurrentDescription(descriptions[currentIdx]);
-//   }, [currentIdx]);
+          <button onClick={() => setIsModalOpen(false)}>Deactivate</button>
+          <button onClick={() => setIsModalOpen(false)}>Cancel</button>
+        </Dialog.Panel>
+      </div>
+    </Dialog>
+  );
+};
 
-//   return (
-//     <Modal
-//       show={openModal}
-//       onClose={() => setOpenModal(false)}
-//       position={'center'}
-//       dismissible
-//     >
-//       <Modal.Header className='bg-black border-x border-t'>
-//         <a href=''>
-//           <FaGithubSquare className='h-[34px] w-[34px] text-white' />
-//         </a>
-//       </Modal.Header>
-//       <Modal.Body className='bg-black border-x border-b'>
-//         <div className='space-y-6 p-6 bg-black'>
-//           <p className='text-lg font-thin'>{currentDescription}</p>
-//         </div>
-//       </Modal.Body>
-//       {/* <Modal.Footer className='border bg-black'>
-//         <Button color='dark' onClick={() => setOpenModal(false)}>
-//           Close
-//         </Button>
-//       </Modal.Footer> */}
-//     </Modal>
-//   );
-// };
-
-// export default ProjectModal;
+export default ProjectModal;
