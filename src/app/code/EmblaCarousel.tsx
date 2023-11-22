@@ -8,9 +8,11 @@ import ProjectModal from './ProjectModal';
 
 const images = ['/slctr-code.png', '/portfolio-code.png'];
 const titles = ['SLCTR APP', 'PORTFOLIO APP'];
+const descriptions = ['HELLO FRIEND #1', 'GOODBYE FRIEND #2'];
 
 const EmblaCarousel = () => {
   const [currentTitle, setCurrentTitle] = useState(titles[0]);
+  const [currentDescription, setCurrentDescription] = useState(descriptions[0]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: 'center',
@@ -21,6 +23,7 @@ const EmblaCarousel = () => {
     if (emblaApi) {
       const currSlideIndex = emblaApi.selectedScrollSnap();
       setCurrentTitle(titles[currSlideIndex]);
+      setCurrentDescription(descriptions[currSlideIndex]);
     }
   }, [emblaApi]);
 
@@ -57,7 +60,12 @@ const EmblaCarousel = () => {
           ))}
         </div>
       </div>
-      <ProjectModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+      <ProjectModal
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+        currentTitle={currentTitle}
+        currentDescription={currentDescription}
+      />
     </div>
   );
 };
