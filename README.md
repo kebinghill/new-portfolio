@@ -4,6 +4,10 @@ This application was built using nextJS bootstrapped with create-next-app. This 
 
 I've thoroughly enjoyed creating this app and hope you find it enjoyable as well!
 
+## Link to Deployed App
+
+https://kevingil.dev
+
 ## App Screenshots
 
 ![Alt text](/public/portfolio-ss-1.png?raw=true 'Screenshot 1')
