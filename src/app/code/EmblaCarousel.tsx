@@ -7,6 +7,7 @@ import Image from 'next/image';
 
 import ProjectModal from './ProjectModal';
 
+// TODO: UPDATE FOLLOWING INTO AN ARRAY OF OBJECTS FOR EACH APP TO THEN HANDLE BY 1 USE STATE CALL
 const slideImages = ['/slctr-code.png', '/portfolio-code.png'];
 const titles = ['SLCTR APP', 'PORTFOLIO APP'];
 const descriptions = [
@@ -14,7 +15,18 @@ const descriptions = [
   'This is the current app you are viewing! To checkout the repo, just click on the Github icon in the upper left corner of this modal.',
 ];
 const builds = [
-  ['NextJS', 'Spotify API', 'Vercel'],
+  [
+    'NextJS',
+    'Next Auth',
+    'Next Client Cookies',
+    'Spotify API',
+    'Typescript',
+    'React',
+    'React Swipeable',
+    'Prisma',
+    'Postgres',
+    'Vercel',
+  ],
   [
     'NextJS',
     'Typescript',
@@ -28,8 +40,20 @@ const builds = [
     'Vercel',
   ],
 ];
-const appScreenshots = [[''], ['/portfolio-ss-1.png', '/portfolio-ss-2.png']];
-const appLinks = [{type: 'github', link: ''}];
+const appScreenshots = [
+  ['/slctr-ss-1.png', '/slctr-ss-2.png'],
+  ['/portfolio-ss-1.png', '/portfolio-ss-2.png'],
+];
+const appLinks = [
+  {
+    github: 'https://github.com/kebinghill/SLCTR_frontend',
+    website: 'https://slctr.vercel.app/login',
+  },
+  {
+    github: 'https://github.com/kebinghill/new-portfolio',
+    website: 'https://kevingil.dev',
+  },
+];
 
 const EmblaCarousel = () => {
   const [currentTitle, setCurrentTitle] = useState(titles[0]);
@@ -38,6 +62,7 @@ const EmblaCarousel = () => {
   const [currentScreenshots, setCurrentScreenshots] = useState(
     appScreenshots[0]
   );
+  const [currentLinks, setCurrentLinks] = useState(appLinks[0]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -61,6 +86,7 @@ const EmblaCarousel = () => {
       setCurrentDescription(descriptions[currSlideIndex]);
       setCurrentBuild(builds[currSlideIndex]);
       setCurrentScreenshots(appScreenshots[currSlideIndex]);
+      setCurrentLinks(appLinks[currSlideIndex]);
     }
   }, [emblaApi]);
 
@@ -102,6 +128,7 @@ const EmblaCarousel = () => {
         currentDescription={currentDescription}
         currentBuild={currentBuild}
         currentScreenshots={currentScreenshots}
+        currentLinks={currentLinks}
       />
       <div className='flex justify-center pt-[10px] list-none'>
         {scrollSnaps.map((_, index) => (

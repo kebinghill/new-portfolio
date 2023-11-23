@@ -12,6 +12,7 @@ const ProjectModal = ({
   currentDescription,
   currentBuild,
   currentScreenshots,
+  currentLinks,
 }: {
   isModalOpen: boolean;
   setIsModalOpen: any;
@@ -19,6 +20,7 @@ const ProjectModal = ({
   currentDescription: string;
   currentBuild: string[];
   currentScreenshots: string[];
+  currentLinks: { github: string; website: string };
 }) => {
   return (
     <Dialog
@@ -34,7 +36,13 @@ const ProjectModal = ({
           <Dialog.Panel className='h-[100%] rounded bg-black border'>
             <Dialog.Title className='flex items-center justify-between text-xl font-light'>
               <div className='flex'>
-                <FaGithubSquare className='h-[30px] w-[30px]' />
+                <a
+                  href={currentLinks.github}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <FaGithubSquare className='h-[30px] w-[30px]' />
+                </a>
               </div>
               {currentTitle}
               <button
@@ -79,12 +87,18 @@ const ProjectModal = ({
                 />
               ))}
             </div>
-            <div className='flex justify-center items-center border-t py-[4px]'>
-              <p className='px-[8px]'>
-                Deployed via {currentBuild[currentBuild.length - 1]}
-              </p>
-              <CgWebsite className='h-[30px] w-[30px]' />
-            </div>
+            <a
+              href={currentLinks.website}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <div className='flex justify-center items-center border-t py-[4px]'>
+                <p className='px-[8px]'>
+                  Deployed via {currentBuild[currentBuild.length - 1]}
+                </p>
+                <CgWebsite className='h-[30px] w-[30px]' />
+              </div>
+            </a>
           </Dialog.Panel>
         </div>
       </div>
