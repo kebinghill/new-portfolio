@@ -47,14 +47,25 @@ const ProjectModal = ({
           <div className='border-y my-[4px]'>
             <p className='w-[100%] text-center border-b'>BUILT WITH</p>
             <div className='flex flex-wrap justify-center'>
-              {currentBuild.map((lib) => (
-                <p key={lib} className='basis-1/2 text-center'>
-                  {lib}
-                </p>
-              ))}
+              {currentBuild.map((lib, idx) => {
+                if (idx === currentBuild.length - 1) {
+                  return;
+                }
+                return (
+                  <p key={lib} className='basis-1/2 text-center'>
+                    {lib}
+                  </p>
+                );
+              })}
             </div>
           </div>
-          <CgWebsite className='h-[30px] w-[30px]' />
+          <p className='w-[100%] text-center border-b'>SCREENSHOTS</p>
+          <div className='flex justify-center items-center'>
+            <p className='px-[8px]'>
+              Deployed via {currentBuild[currentBuild.length - 1]}
+            </p>
+            <CgWebsite className='h-[30px] w-[30px]' />
+          </div>
         </Dialog.Panel>
       </div>
     </Dialog>

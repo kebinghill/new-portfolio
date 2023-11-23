@@ -15,7 +15,7 @@ const descriptions = [
 ];
 
 const builds = [
-  ['NextJS', 'Spotify API'],
+  ['NextJS', 'Spotify API', 'Vercel'],
   [
     'NextJS',
     'Typescript',
@@ -26,6 +26,7 @@ const builds = [
     'Post CSS',
     'Headless UI',
     'Embla Carousel',
+    'Vercel',
   ],
 ];
 
