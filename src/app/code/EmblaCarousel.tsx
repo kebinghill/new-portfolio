@@ -47,7 +47,7 @@ const EmblaCarousel = () => {
 
   return (
     <div className='flex flex-col justify-center items-center w-[100%]'>
-      <div className='text-2xl font-extralight'>{currentTitle}</div>
+      <div className='text-2xl font-extralight py-[12px]'>{currentTitle}</div>
       <div className='overflow-hidden md:w-[700px] w-[95vw]' ref={emblaRef}>
         <div className='flex aspect-[14/12]'>
           {images.map((image) => (
