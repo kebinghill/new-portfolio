@@ -29,6 +29,7 @@ const builds = [
   ],
 ];
 const appScreenshots = [[''], ['/portfolio-ss-1.png', '/portfolio-ss-2.png']];
+const appLinks = [{type: 'github', link: ''}];
 
 const EmblaCarousel = () => {
   const [currentTitle, setCurrentTitle] = useState(titles[0]);
