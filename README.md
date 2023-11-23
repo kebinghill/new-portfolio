@@ -4,6 +4,11 @@ This application was built using nextJS bootstrapped with create-next-app. This 
 
 I've thoroughly enjoyed creating this app and hope you find it enjoyable as well!
 
+## App Screenshots
+
+![Alt text](/public/portfolio-ss-1.png?raw=true 'Screenshot 1')
+![Alt text](/public/portfolio-ss-2.png?raw=true 'Screenshot 2')
+
 ## Running Dev Server
 
 ```bash
