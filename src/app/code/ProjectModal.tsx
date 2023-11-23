@@ -54,12 +54,6 @@ const ProjectModal = ({
               ))}
             </div>
           </div>
-          <p>
-            Are you sure you want to deactivate your account? All of your data
-            will be permanently removed. This action cannot be undone.
-          </p>
-
-          <button onClick={() => setIsModalOpen(false)}>Cancel</button>
           <CgWebsite className='h-[30px] w-[30px]' />
         </Dialog.Panel>
       </div>
