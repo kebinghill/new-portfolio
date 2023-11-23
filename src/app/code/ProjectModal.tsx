@@ -21,7 +21,9 @@ const ProjectModal = ({
       onClose={() => setIsModalOpen(false)}
       className='relative z-50'
     >
-      <div className='fixed inset-0 bg-black/30' aria-hidden='true' />
+      {/* The backdrop, rendered as a fixed sibling to the panel container */}
+      <div className='fixed inset-0 bg-black/80' aria-hidden='true' />
+
       <div className='fixed inset-0 flex w-screen items-center justify-center p-4 '>
         <Dialog.Panel className='mx-[5vw] h-[80vh] rounded bg-black border'>
           <Dialog.Title className='flex items-center justify-between'>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
+import { DotButton } from './EmblaCarouselButtons';
 import Image from 'next/image';
 
 import ProjectModal from './ProjectModal';
@@ -13,29 +14,36 @@ const descriptions = ['HELLO FRIEND #1', 'GOODBYE FRIEND #2'];
 const EmblaCarousel = () => {
   const [currentTitle, setCurrentTitle] = useState(titles[0]);
   const [currentDescription, setCurrentDescription] = useState(descriptions[0]);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: 'center',
     loop: false,
   });
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const scrollTo = useCallback(
+    (index: number) => emblaApi && emblaApi.scrollTo(index),
+    [emblaApi]
+  );
 
   const onSelect = useCallback(() => {
     if (emblaApi) {
       const currSlideIndex = emblaApi.selectedScrollSnap();
+      setSelectedIndex(currSlideIndex);
       setCurrentTitle(titles[currSlideIndex]);
       setCurrentDescription(descriptions[currSlideIndex]);
     }
   }, [emblaApi]);
 
-  // const removeOnSelectListener = useCallback(() => {
-  //   if (emblaApi) emblaApi.off('select', onSelect);
-  // }, [emblaApi, onSelect]);
-
   useEffect(() => {
     if (emblaApi) {
       emblaApi.on('select', onSelect);
+      setScrollSnaps(emblaApi.scrollSnapList());
     }
-  }, [emblaApi, onSelect]);
+  }, [emblaApi, setScrollSnaps, onSelect]);
 
   return (
     <div className='flex flex-col justify-center items-center w-[100%]'>
@@ -66,6 +74,15 @@ const EmblaCarousel = () => {
         currentTitle={currentTitle}
         currentDescription={currentDescription}
       />
+      <div className='flex justify-center pt-[10px] list-none'>
+        {scrollSnaps.map((_, index) => (
+          <DotButton
+            key={index}
+            selected={index === selectedIndex}
+            onClick={() => scrollTo(index)}
+          />
+        ))}
+      </div>
     </div>
   );
 };
