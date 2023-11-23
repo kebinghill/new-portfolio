@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
 import { FaGithubSquare } from 'react-icons/fa';
 import { CgWebsite } from 'react-icons/cg';
 import { Dialog } from '@headlessui/react';
+import Image from 'next/image';
 
 const ProjectModal = ({
   isModalOpen,
@@ -11,12 +11,14 @@ const ProjectModal = ({
   currentTitle,
   currentDescription,
   currentBuild,
+  currentScreenshots,
 }: {
   isModalOpen: boolean;
   setIsModalOpen: any;
   currentTitle: string;
   currentDescription: string;
   currentBuild: string[];
+  currentScreenshots: string[];
 }) => {
   return (
     <Dialog
@@ -45,21 +47,36 @@ const ProjectModal = ({
             {currentDescription}
           </Dialog.Description>
           <div className='border-y my-[4px]'>
-            <p className='w-[100%] text-center border-b'>BUILT WITH</p>
+            <p className='w-[100%] text-center font-extralight text-lg border-b'>
+              BUILT WITH
+            </p>
             <div className='flex flex-wrap justify-center'>
               {currentBuild.map((lib, idx) => {
                 if (idx === currentBuild.length - 1) {
                   return;
                 }
                 return (
-                  <p key={lib} className='basis-1/2 text-center'>
+                  <p key={lib} className='basis-1/2 text-center font-thin'>
                     {lib}
                   </p>
                 );
               })}
             </div>
           </div>
-          <p className='w-[100%] text-center border-b'>SCREENSHOTS</p>
+          <p className='w-[100%] text-center font-extralight text-lg border-b'>
+            SCREENSHOTS
+          </p>
+          <div className='flex flex-col items-center'>
+            {currentScreenshots.map((screenshot) => (
+              <Image
+                src={screenshot}
+                height={200}
+                width={200}
+                alt={screenshot}
+                className='border w-[100%] mb-[8px]'
+              />
+            ))}
+          </div>
           <div className='flex justify-center items-center'>
             <p className='px-[8px]'>
               Deployed via {currentBuild[currentBuild.length - 1]}

@@ -13,7 +13,6 @@ const descriptions = [
   'If you would like access to the site, please contact me at 93kevingil@gmail.com with your name and email. The Spotify API limits Spotify authentication via the SLCTR app while in development mode. To checkout the repo, just click on the Github icon in the upper left corner of this modal.',
   'This is the current app you are viewing! To checkout the repo, just click on the Github icon in the upper left corner of this modal.',
 ];
-
 const builds = [
   ['NextJS', 'Spotify API', 'Vercel'],
   [
@@ -29,11 +28,15 @@ const builds = [
     'Vercel',
   ],
 ];
+const appScreenshots = [[''], ['/portfolio-ss-1.png', '/portfolio-ss-2.png']];
 
 const EmblaCarousel = () => {
   const [currentTitle, setCurrentTitle] = useState(titles[0]);
   const [currentDescription, setCurrentDescription] = useState(descriptions[0]);
   const [currentBuild, setCurrentBuild] = useState(builds[0]);
+  const [currentScreenshots, setCurrentScreenshots] = useState(
+    appScreenshots[0]
+  );
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -56,6 +59,7 @@ const EmblaCarousel = () => {
       setCurrentTitle(titles[currSlideIndex]);
       setCurrentDescription(descriptions[currSlideIndex]);
       setCurrentBuild(builds[currSlideIndex]);
+      setCurrentScreenshots(appScreenshots[currSlideIndex]);
     }
   }, [emblaApi]);
 
@@ -96,6 +100,7 @@ const EmblaCarousel = () => {
         currentTitle={currentTitle}
         currentDescription={currentDescription}
         currentBuild={currentBuild}
+        currentScreenshots={currentScreenshots}
       />
       <div className='flex justify-center pt-[10px] list-none'>
         {scrollSnaps.map((_, index) => (
