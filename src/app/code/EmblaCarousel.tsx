@@ -8,6 +8,7 @@ import Image from 'next/image';
 import ProjectModal from './ProjectModal';
 
 // TODO: UPDATE FOLLOWING INTO AN ARRAY OF OBJECTS FOR EACH APP TO THEN HANDLE BY 1 USE STATE CALL
+
 const slideImages = ['/slctr-code.png', '/portfolio-code.png'];
 const titles = ['SLCTR APP', 'PORTFOLIO APP'];
 const descriptions = [
