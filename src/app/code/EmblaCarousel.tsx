@@ -7,13 +7,32 @@ import Image from 'next/image';
 
 import ProjectModal from './ProjectModal';
 
-const images = ['/slctr-code.png', '/portfolio-code.png'];
+const slideImages = ['/slctr-code.png', '/portfolio-code.png'];
 const titles = ['SLCTR APP', 'PORTFOLIO APP'];
-const descriptions = ['HELLO FRIEND #1', 'GOODBYE FRIEND #2'];
+const descriptions = [
+  'If you would like access to the site, please contact me at 93kevingil@gmail.com with your name and email. The Spotify API limits Spotify authentication via the SLCTR app while in development mode. To checkout the repo, just click on the Github icon in the upper left corner of this modal.',
+  'This is the current app you are viewing! To checkout the repo, just click on the Github icon in the upper left corner of this modal.',
+];
+
+const builds = [
+  ['NextJS', 'Spotify API'],
+  [
+    'NextJS',
+    'Typescript',
+    'React',
+    'React DOM',
+    'React Icons',
+    'Tailwind CSS',
+    'Post CSS',
+    'Headless UI',
+    'Embla Carousel',
+  ],
+];
 
 const EmblaCarousel = () => {
   const [currentTitle, setCurrentTitle] = useState(titles[0]);
   const [currentDescription, setCurrentDescription] = useState(descriptions[0]);
+  const [currentBuild, setCurrentBuild] = useState(builds[0]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -35,6 +54,7 @@ const EmblaCarousel = () => {
       setSelectedIndex(currSlideIndex);
       setCurrentTitle(titles[currSlideIndex]);
       setCurrentDescription(descriptions[currSlideIndex]);
+      setCurrentBuild(builds[currSlideIndex]);
     }
   }, [emblaApi]);
 
@@ -50,7 +70,7 @@ const EmblaCarousel = () => {
       <div className='text-2xl font-extralight py-[12px]'>{currentTitle}</div>
       <div className='overflow-hidden md:w-[700px] w-[95vw]' ref={emblaRef}>
         <div className='flex aspect-[14/12]'>
-          {images.map((image) => (
+          {slideImages.map((image) => (
             <button
               className='aspect-[14/12]'
               key={image}
@@ -63,6 +83,7 @@ const EmblaCarousel = () => {
                 height={700}
                 alt={image}
                 className='aspect-[14/12]'
+                priority
               />
             </button>
           ))}
@@ -73,6 +94,7 @@ const EmblaCarousel = () => {
         setIsModalOpen={setIsModalOpen}
         currentTitle={currentTitle}
         currentDescription={currentDescription}
+        currentBuild={currentBuild}
       />
       <div className='flex justify-center pt-[10px] list-none'>
         {scrollSnaps.map((_, index) => (
