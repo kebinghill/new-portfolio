@@ -33,7 +33,7 @@ const ProjectModal = ({
 
       <div className='fixed inset-0 w-screen overflow-y-auto'>
         <div className='flex min-h-full items-center justify-center p-[24px]'>
-          <Dialog.Panel className='h-[100%] rounded bg-black border'>
+          <Dialog.Panel className='h-[100%] rounded bg-black border max-w-[800px]'>
             <Dialog.Title className='flex items-center justify-between text-xl font-light'>
               <div className='flex'>
                 <a

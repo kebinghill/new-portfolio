@@ -69,7 +69,7 @@ const EmblaCarousel = () => {
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: 'center',
-    loop: false,
+    loop: true,
   });
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
