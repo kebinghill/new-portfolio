@@ -83,7 +83,7 @@ const ProjectModal = ({
                   height={200}
                   width={200}
                   alt={screenshot}
-                  className='border border-black w-[100%]'
+                  className='w-[98%] my-[8px] border-b border-t'
                 />
               ))}
             </div>
