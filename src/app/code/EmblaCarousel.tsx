@@ -69,7 +69,7 @@ const EmblaCarousel = () => {
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: 'center',
-    loop: true,
+    loop: false,
   });
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -99,7 +99,7 @@ const EmblaCarousel = () => {
   }, [emblaApi, setScrollSnaps, onSelect]);
 
   return (
-    <div className='flex flex-col justify-center items-center w-[100%]'>
+    <div className='flex flex-col justify-center items-center'>
       <div className='text-2xl font-extralight py-[12px]'>{currentTitle}</div>
       <div className='overflow-hidden md:w-[700px] w-[95vw]' ref={emblaRef}>
         <div className='flex aspect-[14/12]'>
@@ -116,7 +116,7 @@ const EmblaCarousel = () => {
                 height={700}
                 alt={image}
                 className='aspect-[14/12]'
-                priority
+                priority={false}
               />
             </button>
           ))}
