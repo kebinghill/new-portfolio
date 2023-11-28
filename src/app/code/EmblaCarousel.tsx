@@ -122,7 +122,7 @@ const EmblaCarousel = () => {
           ))}
         </div>
       </div>
-      <ProjectModal
+      {/* <ProjectModal
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
         currentTitle={currentTitle}
@@ -130,7 +130,7 @@ const EmblaCarousel = () => {
         currentBuild={currentBuild}
         currentScreenshots={currentScreenshots}
         currentLinks={currentLinks}
-      />
+      /> */}
       <div className='flex justify-center pt-[10px] list-none'>
         {scrollSnaps.map((_, index) => (
           <DotButton
