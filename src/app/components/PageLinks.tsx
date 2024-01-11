@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const PageLinks = () => {
   return (
-    <div className='px-[4px]'>
+    <div>
       <Link href='/bio' className='pr-[4px]'>
         Bio
       </Link>

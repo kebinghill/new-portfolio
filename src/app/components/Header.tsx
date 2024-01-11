@@ -11,7 +11,7 @@ const Header = () => {
           <div className='text-[15px]'>SOFTWARE ENGINEER</div>
         </div>
       </Link>
-      <div className='flex justify-between items-center'>
+      <div className='flex justify-between items-center px-[8px]'>
         <PageLinks />
         <SocialLinks />
       </div>
