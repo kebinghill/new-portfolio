@@ -42,12 +42,12 @@ const Resume = () => {
         <div className='flex justify-center text-lg font-extralight'>
           CLICK ON A SECTION BELOW
         </div>
-        <div className='bg-cover bg-center bg-no-repeat bg-[url("/resume.png")] rounded w-[100vw] md:w-[600px] aspect-[3/4] flex flex-col'>
+        <div className='bg-cover bg-center bg-no-repeat bg-[url("/resume-2.png")] rounded w-[100vw] md:w-[600px] aspect-[3/4] flex flex-col'>
           <button
             onMouseEnter={() => setShowHoverSection(resumeSections.CONTACT)}
             onMouseLeave={() => handleOnMouseLeave()}
             onClick={() => handleOnClick(resumeSections.CONTACT)}
-            className='flex-[0.8]'
+            className='flex-[0.85]'
           >
             {showHoverSection === resumeSections.CONTACT && (
               <div className='flex justify-center items-center text-5xl bg-stone-900/90 h-[100%]'>
@@ -59,7 +59,7 @@ const Resume = () => {
             onMouseEnter={() => setShowHoverSection(resumeSections.SUMMARY)}
             onMouseLeave={() => handleOnMouseLeave()}
             onClick={() => handleOnClick(resumeSections.SUMMARY)}
-            className='flex-[0.5]'
+            className='flex-[0.72]'
           >
             {showHoverSection === resumeSections.SUMMARY && (
               <div className='flex justify-center items-center text-5xl bg-stone-900/90 h-[100%]'>
@@ -68,22 +68,10 @@ const Resume = () => {
             )}
           </button>
           <button
-            onMouseEnter={() => setShowHoverSection(resumeSections.SKILLS)}
-            onMouseLeave={() => handleOnMouseLeave()}
-            onClick={() => handleOnClick(resumeSections.SKILLS)}
-            className='flex-[0.8]'
-          >
-            {showHoverSection === resumeSections.SKILLS && (
-              <div className='flex justify-center items-center text-5xl bg-stone-900/90 h-[100%]'>
-                SKILLS
-              </div>
-            )}
-          </button>
-          <button
             onMouseEnter={() => setShowHoverSection(resumeSections.EXPERIENCE)}
             onMouseLeave={() => handleOnMouseLeave()}
             onClick={() => handleOnClick(resumeSections.EXPERIENCE)}
-            className='flex-[2.9]'
+            className='flex-[4]'
           >
             {showHoverSection === resumeSections.EXPERIENCE && (
               <div className='flex justify-center items-center  text-5xl bg-stone-900/90 h-[100%]'>
@@ -92,10 +80,22 @@ const Resume = () => {
             )}
           </button>
           <button
+            onMouseEnter={() => setShowHoverSection(resumeSections.SKILLS)}
+            onMouseLeave={() => handleOnMouseLeave()}
+            onClick={() => handleOnClick(resumeSections.SKILLS)}
+            className='flex-[0.7]'
+          >
+            {showHoverSection === resumeSections.SKILLS && (
+              <div className='flex justify-center items-center text-5xl bg-stone-900/90 h-[100%]'>
+                SKILLS
+              </div>
+            )}
+          </button>
+          <button
             onMouseEnter={() => setShowHoverSection(resumeSections.EDUCATION)}
             onMouseLeave={() => handleOnMouseLeave()}
             onClick={() => handleOnClick(resumeSections.EDUCATION)}
-            className='flex-1'
+            className='flex-[1.05]'
           >
             {showHoverSection === resumeSections.EDUCATION && (
               <div className='flex justify-center items-center text-5xl bg-stone-900/90 h-[100%]'>
