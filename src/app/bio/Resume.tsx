@@ -136,11 +136,12 @@ const Resume = () => {
               SUMMARY
             </p>
             <p className='flex items-center text-lg font-thin px-[4%] py-[2%]'>
-              Full Stack software developer with extensive knowledge of building
-              web applications using a variety of languages and frameworks
-              looking for a full-time remote position. Passionate about
-              improving user experience by improving on current features and
-              building new ones in a fast-paced production environment.
+              Skilled Full Stack software developer adept at crafting robust web
+              applications, seeking a full-time role to leverage expertise in
+              driving impactful technological advancements.Dedicated to
+              elevating user experience through iterative enhancements of
+              existing features and the efficient development of innovative
+              features.
             </p>
           </div>
         )}
@@ -194,23 +195,33 @@ const Resume = () => {
                 MONUMENT | NEW YORK, NY | 2022 - 2023
               </p>
               <p className='text-base italic font-extralight pb-[1%]'>
-                Contributed to the development and enhancement of features in
-                backend and frontend repositories for a telehealth start-up.
+                Made significant contributions to the backend and frontend of a
+                pioneering telehealth startup, using NestJS and React,
+                Javascript and Typescript.
               </p>
               <li className='text-base font-thin pb-[1%]'>
-                Created and implemented the “Daily Affirmations” feature,
-                allowing users to receive personalized affirmations on their
-                dashboards. Integrated with Customer.io to send affirmations via
-                text messages to opted-in users.
+                Innovated and implemented the widely requested &quot;Daily
+                Affirmations&quot; feature, empowering users with personalized
+                affirmations directly on their dashboards. Seamlessly integrated
+                with Customer.io to deliver affirmations via text messages. This
+                allowed Monument&apos;s features to come into parity with an
+                acquired service (Tempest), so that Tempest&apos;s users would
+                be more familiar with the platform when migrated over to
+                Monument.
               </li>
               <li className='text-base font-thin pb-[1%]'>
-                Developed relational tables, services methods, and testing to
-                facilitate the integration of employers on the app, expanding
-                our reach and providing additional support to those in need.
+                Engineered relational tables, service methods, and rigorous
+                testing procedures, utilizing SQL and RESTful APIs within
+                NestJS, to enable seamless integration of employers onto the
+                platform extending crucial support to a larger demographic
+                within our user community. Employer analytics has aided in
+                communicating anonymized data with partners about the
+                effectiveness of the Monument program.
               </li>
               <li className='text-base font-thin pb-[1%]'>
-                Resolved various user experience bugs promptly and effectively
-                to ensure seamless usage of the application.
+                Proactively identified and resolved complex user experience bugs
+                using Agile methodologies and Asana, resulting in enhanced user
+                satisfaction and uninterrupted application usage.
               </li>
               <p className='text-xl font-extralight underline decoration-0'>
                 Manager of Care Coordination
@@ -219,16 +230,30 @@ const Resume = () => {
                 MONUMENT | NEW YORK, NY | 2020 - 2022
               </p>
               <p className='text-base italic font-extralight pb-[1%]'>
-                Managed a small team of 5 care coordinators to assist members
-                with their user experience on the telehealth platform.
+                Led the successful implementation of Zendesk, streamlining
+                support operations and enhancing the efficiency of issue
+                resolution for a rapidly growing user base. Success in this role
+                allowed a career pivot into development where praise from senior
+                management and peers was earned, as shown in LinkedIn
+                testimonials.
               </p>
               <li className='text-base font-thin pb-[1%]'>
-                Documented support processes and escalated bugs to the
-                engineering team.
+                Built and nurtured a high-performing care coordination team,
+                fostering a culture of innovation and collaboration that
+                contributed significantly to scaling Monument&apos;s support
+                capabilities to meet escalating user demands.
               </li>
               <li className='text-base font-thin pb-[1%]'>
-                Maintained above an overall 90% satisfaction rating amongst app
-                users.
+                Played a pivotal role in solidifying Monument&apos;s position as
+                a leading health tech organization, implementing strategic
+                initiatives that optimized user experience and ensured
+                industry-leading support standards, contributing to elevated
+                user satisfaction and brand loyalty.
+              </li>
+              <li className='text-base font-thin pb-[1%]'>
+                Partnered with engineering and product teams to push for an
+                in-house scheduling system which contributed to improved
+                clinician and user experience based on feedback.
               </li>
               <p className='text-xl font-extralight underline decoration-0'>
                 Technical Support Associate
@@ -241,8 +266,8 @@ const Resume = () => {
                 and software technical complications.
               </p>
               <li className='text-base font-thin pb-[1%]'>
-                Provided support for both the Peloton native app and Peloton
-                bike.
+                Provided support for both the Peloton native application and
+                Peloton bike.
               </li>
             </div>
           </div>
