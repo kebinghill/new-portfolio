@@ -9,10 +9,11 @@ import ProjectModal from './ProjectModal';
 
 // TODO: UPDATE FOLLOWING INTO AN ARRAY OF OBJECTS FOR EACH APP TO THEN HANDLE BY 1 USE STATE CALL
 
-const slideImages = ['/slctr-code.png', '/portfolio-code.png'];
-const titles = ['SLCTR APP', 'PORTFOLIO APP'];
+const slideImages = ['/slctr-code.png', '/minefm.gif', '/portfolio-code.png'];
+const titles = ['SLCTR APP', 'MINE.FM', 'PORTFOLIO APP'];
 const descriptions = [
   'If you would like access to the site, please contact me at 93kevingil@gmail.com with your name and email. The Spotify API limits Spotify authentication via the SLCTR app while in development mode. To checkout the repo, just click on the Github icon in the upper left corner of this modal.',
+  'An application built to allow artists to create livestreams and users to connect to these livestreams discovering new music and moods. This is a web3 open source project in which I was able to add additional features such as db migrations and an audio visualizer for the livestreams.',
   'This is the current app you are viewing! To checkout the repo, just click on the Github icon in the upper left corner of this modal.',
 ];
 const builds = [
@@ -30,6 +31,17 @@ const builds = [
   ],
   [
     'NextJS',
+    'NestJS',
+    'PostgreSQL',
+    'TypeORM',
+    'Typescript',
+    'React',
+    'React DOM',
+    'Tailwind CSS',
+    'Vercel',
+  ],
+  [
+    'NextJS',
     'Typescript',
     'React',
     'React DOM',
@@ -43,12 +55,17 @@ const builds = [
 ];
 const appScreenshots = [
   ['/slctr-ss-1.png', '/slctr-ss-2.png'],
+  ['/minefm-ss-1.png', '/minefm-ss-2.png'],
   ['/portfolio-ss-1.png', '/portfolio-ss-2.png'],
 ];
 const appLinks = [
   {
     github: 'https://github.com/kebinghill/SLCTR_frontend',
     website: 'https://slctr.vercel.app/login',
+  },
+  {
+    github: 'https://github.com/Brick-Creative-Studio/mine-fm',
+    website: 'https://mine.fm/',
   },
   {
     github: 'https://github.com/kebinghill/new-portfolio',
